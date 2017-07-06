@@ -25,7 +25,11 @@ metalsmith(__dirname)
     engine: 'handlebars',
     directory: './layouts',
     default: 'post.html',
-    pattern: ["*/*/*html","*/*html","*html"]
+    pattern: ["*/*/*html","*/*html","*html"],
+    partials: {
+      header: 'partials/header',
+      footer: 'partials/footer'
+    }
   }))
   .build(function (err) {
     if (err) {
