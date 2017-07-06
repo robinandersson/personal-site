@@ -1,0 +1,24 @@
+{
+  "name": "robinandersson.se",
+  "version": "1.0.0",
+  "description": "Robin Andersson's personal web page.",
+  "private": true,
+  "main": "build.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robinandersson/robinandersson.se"
+  },
+  "author": "Robin Andersson",
+  "license": "Copyright Robin Andersson (MIT)",
+  "bugs": {
+    "url": "https://github.com/robinandersson/robinandersson.se/issues"
+  },
+  "homepage": "https://github.com/robinandersson/robinandersson.se#readme",
+  "dependencies": {
+    "metalsmith": "^2.3.0"
+  }
+}
