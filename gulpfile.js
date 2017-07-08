@@ -5,12 +5,13 @@ var sourcemaps = require('gulp-sourcemaps');
 var build = require('./build.js');
 
 var path = {
-  scss: 'src/assets/stylesheets/site.scss',
+  mainScss: 'src/assets/stylesheets/site.scss',
+  scss: 'src/assets/stylesheets/**/*.scss',
   html: 'layouts/**/*.html'
 }
 
 function processScss() {
-  return gulp.src(path.scss)
+  return gulp.src(path.mainScss)
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: [ './src/assets/stylesheets' ],
