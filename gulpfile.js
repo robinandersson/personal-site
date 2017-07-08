@@ -33,7 +33,10 @@ gulp.task('serve', [], function() {
       server: "./public"
     });
 
-    gulp.watch(path.scss, ['sass']);
+    gulp.watch(path.scss, () => {
+      processScss()
+      browserSync.reload();
+    });
     gulp.watch(path.html).on('change', () => build(() => {
       processScss();
       browserSync.reload()
