@@ -20,6 +20,7 @@ function processScss() {
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./public/assets/'))
+    .pipe(browserSync.stream());
 };
 
 gulp.task('sass', processScss);
@@ -33,10 +34,7 @@ gulp.task('serve', [], function() {
       server: "./public"
     });
 
-    gulp.watch(path.scss, () => {
-      processScss()
-      browserSync.reload();
-    });
+    gulp.watch(path.scss, ['sass']);
     gulp.watch(path.html).on('change', () => build(() => {
       processScss();
       browserSync.reload()
