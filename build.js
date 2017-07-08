@@ -4,9 +4,11 @@ var layouts = require('metalsmith-layouts');
 var handlebars = require('handlebars');
 var collections = require('metalsmith-collections');
 var permalinks = require('metalsmith-permalinks');
+var ignore = require('metalsmith-ignore');
 
 
-metalsmith(__dirname)
+const site = metalsmith(__dirname)
+  .clean(true)
   .metadata({
     site: {
       name: 'robinandersson.se',
@@ -15,6 +17,9 @@ metalsmith(__dirname)
   })
   .source('./src')
   .destination('./public')
+  .use(ignore([
+    'assets/stylesheets/**/*'
+  ]))
   .use(markdown())
   .use(collections({
     articles: {
@@ -36,12 +41,18 @@ metalsmith(__dirname)
       header: 'partials/header',
       footer: 'partials/footer'
     }
-  }))
-  .build(function (err) {
+  }));
+
+const build = (callback) => {
+  site.build(function (err) {
     if (err) {
       console.log(err);
     }
     else {
+      callback();
       console.log('robinandersson.se built!');
     }
   });
+}
+
+module.exports = build;
