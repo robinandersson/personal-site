@@ -13,7 +13,10 @@ function processScss() {
   return gulp.src(path.scss)
     .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: [ './src/assets/stylesheets' ],
+      includePaths: [
+        './src/assets/stylesheets',
+        './node_modules/tachyons/src'
+      ],
       outputStyle: 'compressed'
     }))
     .pipe(sass().on('error', sass.logError))

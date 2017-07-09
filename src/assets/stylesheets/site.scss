@@ -2,6 +2,14 @@
   Main entry point for this here spectacular robinandersson.se site :)
 */
 
-@import "./lib/normalize.scss";
-@import "./common/typography.scss";
-@import "./views/home.scss";
+// Tachyons
+
+@import "type-scale";
+
+// The rest ;)
+
+@import "./lib/normalize";
+
+@import "./common/typography";
+
+@import "./views/home";
