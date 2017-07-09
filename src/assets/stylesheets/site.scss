@@ -5,13 +5,18 @@
 // Tachyons
 
 @import "type-scale";
+@import "colors";
+@import "skins";
 
 // The rest ;)
 
-@import "./lib/normalize";
-
 @import "./variables";
 
+@import "./lib/normalize";
+@import "./lib/helpers";
+
+
 @import "./common/typography";
+@import "./common/elements";
 
 @import "./views/home";

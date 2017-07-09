@@ -1,0 +1,13 @@
+/*
+  Helpers that don't fit anywhere else
+*/
+
+.heading::after {
+  border-bottom-style: solid;
+  margin-top: .5em;
+  margin-bottom: 1em;
+  border-bottom-width: .2em;
+  content: '';
+  display: block;
+  width: 2em;
+}
