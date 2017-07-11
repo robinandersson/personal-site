@@ -63,10 +63,12 @@ header[role="banner"] {
   border-radius: 100%;
   border-width: 10px;
   border-style: solid;
+  margin-bottom: 5em;
   @include mobile {
     max-width: 50%;
   }
   @include tablet {
+    margin-bottom: 0;
     max-width: 350px;
     left: inherit;
   }
@@ -74,5 +76,19 @@ header[role="banner"] {
     max-width: 400px;
     top: -10em;
     right: 15%;
+  }
+}
+
+main[role="main"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-about {
+  padding-left: 10vw;
+  width: 90vw;
+  @include tablet {
+    padding-left: 10vw;
+    width: 70vw;
   }
 }
