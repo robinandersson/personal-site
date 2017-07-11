@@ -56,14 +56,16 @@ header[role="banner"] {
 }
 
 #site-header .hero-image {
-  max-width: 50%;
+  max-width: 70%;
   box-sizing: content-box;
   position: relative;
   align-self: center;
   border-radius: 100%;
   border-width: 10px;
   border-style: solid;
-  @include mobile {}
+  @include mobile {
+    max-width: 50%;
+  }
   @include tablet {
     max-width: 350px;
     left: inherit;
