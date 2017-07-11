@@ -1,3 +1,8 @@
+header[role="banner"] {
+  display: flex;
+  flex-direction: column;
+}
+
 #site-header::before {
   background-image: url('/assets/images/top-background.svg');
   background-size: cover;
@@ -5,37 +10,67 @@
   padding-bottom: 40%;
   width: 100%;
   height: 0;
-  min-height: 800px;
+  min-height: 600px;
   content: '';
   position: absolute;
   z-index: -1;
-}
-
-#site-header .hero-image {
-  position: absolute;
-  top: 30%;
-  left: 10%;
-  border-radius: 100%;
-  border-width: 10px;
-  border-style: solid;
+  font-size: 1.5rem;
 }
 
 #site-header nav {
   font-size: 1rem;
+
   ul {
     margin: 0;
-    padding: 1rem 0 0 5rem;
+    padding: 1rem 0 0 1rem;
+    @include laptop {
+      padding: 1rem 0 0 5rem;
+    }
   }
   li {
     display: inline-block;
-    padding: 2rem;
+    padding: 1rem;
+    @include laptop {
+      padding: 1rem;
+    }
   }
 }
 
 #site-header .headline {
   overflow: hidden;
-  min-height: 500px;
-  padding-bottom: 30%;
+  padding-bottom: 5em;
   padding-top: 5%;
-  padding-left: 65%;
+  padding-left: 40%;
+  align-self: center;
+  @include tablet {
+    overflow: hidden;
+    padding-top: 0;
+    padding-left: 50%;
+  }
+  @include laptop {
+    overflow: hidden;
+    padding-top: 5%;
+    padding-left: 45%;
+  }
+
+}
+
+#site-header .hero-image {
+  max-width: 50%;
+  box-sizing: content-box;
+  position: relative;
+  align-self: center;
+  border-radius: 100%;
+  border-width: 10px;
+  border-style: solid;
+  @include mobile {}
+  @include tablet {
+    max-width: 350px;
+    left: inherit;
+  }
+  @include laptop {
+    max-width: 400px;
+    top: -10em;
+    right: 15%;
+  }
 }
