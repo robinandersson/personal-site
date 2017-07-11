@@ -5,12 +5,14 @@
 // Tachyons
 
 @import "type-scale";
+@import "media-queries";
 @import "colors";
 @import "skins";
 
 // The rest ;)
 
 @import "./variables";
+@import "./lib/mixins";
 
 @import "./lib/normalize";
 @import "./lib/helpers";

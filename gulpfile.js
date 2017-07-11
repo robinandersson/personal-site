@@ -4,6 +4,9 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var build = require('./build.js');
 
+var postcss = require('gulp-postcss');
+var customMedia = require('postcss-custom-media');
+
 var path = {
   scss: 'src/assets/stylesheets/**/*.scss',
   html: 'layouts/**/*.html'
@@ -20,6 +23,9 @@ function processScss() {
       outputStyle: 'compressed'
     }))
     .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([
+      customMedia()
+    ]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./public/assets/'))
     .pipe(browserSync.stream());

@@ -1,0 +1,29 @@
+@mixin larger-than($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @include larger-than(30em) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @include larger-than(45em) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @include larger-than(60em) {
+    @content;
+  }
+}
+
+@mixin hd() {
+  @include larger-than(90em) {
+    @content;
+  }
+}
