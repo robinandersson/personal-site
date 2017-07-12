@@ -123,21 +123,14 @@ main[role="main"] {
   padding-left: 10vw;
   padding-right: 10vw;
   align-self: center;
-  // max-width: 1000px;
   @include mobile {
-    // overflow: hidden;
     padding-top: 90%;
-    // padding-left: 50%;
   }
   @include tablet {
-    // overflow: hidden;
     padding-top: 50%;
-    // padding-left: 50%;
   }
   @include laptop {
-    // overflow: hidden;
     padding-top: 40%;
-    // padding-left: 45%;
   }
 }
 
@@ -150,28 +143,18 @@ main[role="main"] {
 
 .skill-cloud {
   overflow: hidden;
-  // margin-top: 5%;
   padding: 0;
   text-align: center;
-  // max-width: 1000px;
   margin-left: 5vw;
   margin-right: 5vw;
   @include mobile {
     margin-top: 8%;
-  }
-  @include tablet {
-    // margin-top: 30%;
-  }
-  @include laptop {
-    // margin-top: 15%;
   }
 }
 
 .skill-cloud li {
   list-style: none;
   float: left;
-  // padding: 5%;
-  // &:nth-child()
 }
 
 @for $i from 1 through 10 {
