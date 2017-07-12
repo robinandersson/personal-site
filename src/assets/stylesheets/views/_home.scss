@@ -14,7 +14,6 @@ header[role="banner"] {
   content: '';
   position: absolute;
   z-index: -1;
-  font-size: 1.5rem;
 }
 
 #site-header nav {
@@ -87,8 +86,100 @@ main[role="main"] {
 .home-about {
   padding-left: 10vw;
   width: 90vw;
+  max-width: 1000px;
+  margin-top: 10em;
+  margin-bottom: 10em;
   @include tablet {
+    margin-top: 20em;
+    margin-bottom: 20em;
     padding-left: 10vw;
     width: 70vw;
+  }
+}
+
+.topic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-code::before {
+  background-image: url('/assets/images/code-background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 100%;
+  width: 100%;
+  height: 0;
+  min-height: 1500px;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.topic-headline {
+  overflow: hidden;
+  padding-bottom: 10%;
+  padding-top: 130%;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  align-self: center;
+  // max-width: 1000px;
+  @include mobile {
+    // overflow: hidden;
+    padding-top: 90%;
+    // padding-left: 50%;
+  }
+  @include tablet {
+    // overflow: hidden;
+    padding-top: 50%;
+    // padding-left: 50%;
+  }
+  @include laptop {
+    // overflow: hidden;
+    padding-top: 40%;
+    // padding-left: 45%;
+  }
+}
+
+.topic-headline-left {
+  padding-right: 15%;
+  @include tablet {
+    padding-right: 40%;
+  }
+}
+
+.skill-cloud {
+  overflow: hidden;
+  // margin-top: 5%;
+  padding: 0;
+  text-align: center;
+  // max-width: 1000px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  @include mobile {
+    margin-top: 8%;
+  }
+  @include tablet {
+    // margin-top: 30%;
+  }
+  @include laptop {
+    // margin-top: 15%;
+  }
+}
+
+.skill-cloud li {
+  list-style: none;
+  float: left;
+  // padding: 5%;
+  // &:nth-child()
+}
+
+@for $i from 1 through 10 {
+  .skill-cloud li:nth-child(#{$i}n) {
+    $i: percentage(random(5)/100);
+    padding: $i;
+    @include laptop {
+      padding: $i * 1.3;
+    }
   }
 }
