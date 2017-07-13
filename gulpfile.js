@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
 var build = require('./build.js');
 
 var postcss = require('gulp-postcss');
@@ -26,6 +27,7 @@ function processScss() {
     .pipe(postcss([
       customMedia()
     ]))
+    .pipe(autoprefixer())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./public/assets/'))
     .pipe(browserSync.stream());

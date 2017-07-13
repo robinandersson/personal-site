@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/robinandersson/robinandersson.se#readme",
   "dependencies": {
+    "gulp-autoprefixer": "^4.0.0",
     "handlebars": "^4.0.10",
     "metalsmith": "^2.3.0",
     "metalsmith-collections": "^0.9.0",
