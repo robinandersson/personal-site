@@ -60,7 +60,14 @@ header[role="banner"] {
     padding-top: 5%;
     padding-left: 45%;
   }
+}
 
+#site-header #headline-heading {
+  animation: header-headline-animation 1s;
+}
+
+#site-header #headline-description {
+  animation: header-description-animation 2s;
 }
 
 #site-header .hero-image {
