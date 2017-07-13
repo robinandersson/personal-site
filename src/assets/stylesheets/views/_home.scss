@@ -244,7 +244,8 @@ footer[role="contentinfo"] .footer-icon-container {
 footer[role="contentinfo"] .footer-icon-container a {
   width: 20%;
   margin: 5%;
-  max-width: 150px;
+  max-width: 100px;
+  fill: $white;
   @include tablet {
     width: 15%;
     max-width: 200px;
@@ -253,4 +254,20 @@ footer[role="contentinfo"] .footer-icon-container a {
     max-width: 250px;
     margin: 2em;
   }
+}
+
+footer[role="contentinfo"] .footer-icon-container svg {
+  width: 100%;
+}
+
+#linkedin-icon:hover {
+  fill: #369ADA;
+}
+
+#mail-icon:hover {
+  fill: teal;
+}
+
+#git-icon:hover {
+  fill: #333;
 }
