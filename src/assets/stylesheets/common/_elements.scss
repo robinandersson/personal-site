@@ -5,3 +5,10 @@
 body {
   min-height: 100vh;
 }
+
+a {
+  color: $comp-purple;
+  &:hover {
+    color: darken($comp-purple, 10%);
+  }
+}
