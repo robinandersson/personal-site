@@ -8,15 +8,18 @@
       </ul>
     </nav>
     <div class="headline">
-      <h1 class="f2 f1-ns fw3 heading">Hi!</h1>
-      <h2 class="f4 f3-m f2-l fw4">I'm Robin Andersson, <br>and I'm a</h2>
-      <h3 class="f5 f4-m f3-l ffw4">Web Developer</h2>
+      <h1 class="f2 f1-ns fw3 heading" id="headline-heading">Hi!</h1>
+      <div id="headline-description">
+        <h2 class="f4 f3-m f2-l fw4">I'm Robin Andersson, <br>and I'm a</h2>
+        <div id="professionCarousel">
+          <h3 class="f5 f4-m f3-l ffw4" id="profession"><span id="profession-text">Web Developer</span><span class="cursor">|</span></h2>
+        </div>
+      </div>
     </div>
     <img src="assets/images/robin_istanbul.jpg" alt="Robin Andersson in Istanbul" class="hero-image">
   </header>
 
   <main role="main">
-
     <section class="home-intro" class="black">
       <div class="headline-left">
         <h1 class="f2 f1-ns fw3 heading comp-blue">Who's this guy?</h1>
@@ -109,6 +112,80 @@
       <a href="https://github.com/robinandersson" target="_blank"><svg width="121" height="121" viewBox="0 0 121 121" xmlns="http://www.w3.org/2000/svg" id="git-icon"><title>Github</title><path d="M68.813 84.294s-4.074.493-8.563.493c-4.489 0-8.616-.456-8.616-.456-10.487-1.194-21.509-5.245-21.509-23.34 0-5.154 1.838-9.368 4.858-12.67-.482-1.194-2.105-5.995.463-12.499 0 0 3.965-1.269 12.987 4.843 3.766-1.047 7.807-1.57 11.82-1.59 4.011.02 8.052.543 11.825 1.59 9.015-6.112 12.972-4.843 12.972-4.843 2.576 6.504.957 11.305.471 12.498 3.024 3.303 4.854 7.517 4.854 12.672 0 18.139-11.04 22.134-21.562 23.302M60.25 0C26.973 0 0 26.973 0 60.25c0 33.273 26.973 60.25 60.25 60.25 33.273 0 60.25-26.977 60.25-60.25C120.5 26.973 93.523 0 60.25 0" fill-rule="evenodd"/></svg></a>
     </div>
   </footer>
+
+  <script type="text/javascript">
+    var professions = [
+      'Web Developer',
+      'Web Designer',
+      'Fifa Player ⚽️😉',
+      '(on PS4 ofc)',
+      'UI Designer',
+      'Fullstack Developer',
+      'Beer Drinker 🍺🍻',
+      'Interaction Designer',
+      'Frontend Developer'
+    ];
+
+    var professionIterator = 0;
+    var wordIteratior = 0;
+
+    function blinkCursor(elem, initialClasses, blink) {
+      if(blink) {
+        elem.className += ' hidden';
+      } else {
+        elem.className = initialClasses;
+      }
+
+      setTimeout(function() {
+        blinkCursor(elem, initialClasses, !blink);
+      }, 750);
+    }
+
+    function eraseText(elem) {
+      elem.innerHTML = elem.innerHTML.substring(0, elem.innerHTML.length - 1);
+      if (elem.innerHTML.length) {
+        setTimeout(function() {
+          eraseText(elem);
+        }, 200 * Math.random());
+      } else {
+        professionIterator = (professionIterator + 1) % professions.length;
+        setTimeout(function() {
+          printText(elem);
+        }, 750);
+      }
+    }
+
+    function printText(elem) {
+      var text = professions[professionIterator];
+      elem.innerHTML = text.substring(0, elem.innerHTML.length + 1);
+      if (elem.innerHTML.length < text.length) {
+        setTimeout(function() {
+          printText(elem);
+        }, 200 * Math.random());
+
+      } else {
+        setTimeout(function() {
+          eraseText(elem);
+        }, 2000);
+      }
+    }
+
+    // starts the profession-carousel, infinitely prints and erases the professions listed above
+    function startProfessionCarousel() {
+      var cursorElem = document.getElementsByClassName('cursor');
+      var textElem = document.getElementById('profession-text');
+
+      textElem.innerHTML = '';
+
+      // should only be one element
+      blinkCursor(cursorElem[0], cursorElem[0].className, true);
+      setTimeout(function() {
+        printText(textElem);
+      }, 3000);
+    }
+
+    document.addEventListener('DOMContentLoaded', startProfessionCarousel, false);
+  </script>
 
 
 
