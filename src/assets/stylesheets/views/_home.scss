@@ -237,17 +237,25 @@ footer[role="contentinfo"] {
   position: relative;
 }
 
-footer[role="contentinfo"] .footer-icon-container {
+footer[role="contentinfo"] .contact-info-container {
   position: absolute;
   bottom: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 3%;
+  max-width: 600px;
 }
 
 
-footer[role="contentinfo"] .footer-icon-container a {
+footer[role="contentinfo"] .contact-info-container .heading {
+  position: absolute;
+  top: -3em;
+  right: auto;
+  padding-right: 33%;
+}
+
+footer[role="contentinfo"] .contact-info-container a {
   width: 20%;
   margin: 5%;
   max-width: 100px;
@@ -262,7 +270,7 @@ footer[role="contentinfo"] .footer-icon-container a {
   }
 }
 
-footer[role="contentinfo"] .footer-icon-container svg {
+footer[role="contentinfo"] .contact-info-container svg {
   width: 100%;
 }
 
