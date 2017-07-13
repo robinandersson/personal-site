@@ -83,7 +83,7 @@ main[role="main"] {
   flex-direction: column;
 }
 
-.home-about, .home-work, .home-contact {
+.home-intro, .home-about, .home-work {
   width: 90vw;
   max-width: 1200px;
   margin-top: 5em;
@@ -222,7 +222,7 @@ footer[role="contentinfo"] {
   position: relative;
 }
 
-footer[role="contentinfo"] .test {
+footer[role="contentinfo"] .footer-icon-container {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -232,7 +232,7 @@ footer[role="contentinfo"] .test {
 }
 
 
-footer[role="contentinfo"] .test img {
+footer[role="contentinfo"] .footer-icon-container a {
   width: 20%;
   margin: 5%;
   max-width: 150px;
