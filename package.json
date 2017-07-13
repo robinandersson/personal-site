@@ -6,7 +6,7 @@
   "main": "build.js",
   "scripts": {
     "prestart": "npm install",
-    "start": "node ."
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
