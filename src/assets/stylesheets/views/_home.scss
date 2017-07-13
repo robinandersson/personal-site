@@ -132,7 +132,7 @@ main[role="main"] {
 .topic-headline {
   overflow: hidden;
   padding-bottom: 5%;
-  padding-top: 130%;
+  padding-top: 120%;
   padding-left: 10vw;
   padding-right: 10vw;
   align-self: center;
@@ -148,7 +148,6 @@ main[role="main"] {
 }
 
 .headline-left {
-  margin-bottom: 10%;
   padding-right: 15%;
   @include tablet {
     padding-right: 40%;
@@ -171,18 +170,18 @@ main[role="main"] {
   margin-left: 5vw;
   margin-right: 5vw;
   margin-bottom: 140%;
+  margin-top: 4%;
   @include mobile {
     margin-bottom: 120%;
-    margin-top: 8%;
   }
   @include tablet {
     margin-bottom: 100%;
   }
   @include laptop {
-    margin-bottom: 70%;
+    margin-bottom: 80%;
   }
   @include hd {
-    margin-bottom: 40%;
+    margin-bottom: 60%;
   }
 }
 
@@ -193,7 +192,7 @@ main[role="main"] {
 
 @for $i from 1 through 10 {
   .skill-cloud li:nth-child(#{$i}n) {
-    $i: percentage(random(5)/100);
+    $i: percentage(random(3)/100);
     padding: $i;
     @include tablet {
       padding: $i * 1.2;
