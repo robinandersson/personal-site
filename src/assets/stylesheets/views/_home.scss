@@ -16,6 +16,15 @@ header[role="banner"] {
   z-index: -1;
 }
 
+#site-header a {
+  color: $white;
+  text-decoration: none;
+  transition: all 0.2s;
+  &:hover {
+    letter-spacing: 0.1em
+  }
+}
+
 #site-header nav {
   font-size: 1rem;
 
