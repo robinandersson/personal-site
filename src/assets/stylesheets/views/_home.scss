@@ -26,8 +26,6 @@ header[role="banner"] {
 }
 
 #site-header nav {
-  font-size: 1rem;
-
   ul {
     margin: 0;
     padding: 1rem 0 0 1rem;
@@ -57,7 +55,6 @@ header[role="banner"] {
   }
   @include laptop {
     overflow: hidden;
-    padding-top: 5%;
     padding-left: 45%;
   }
 }
